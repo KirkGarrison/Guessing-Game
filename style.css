@@ -1,0 +1,32 @@
+
+header {
+       color: black;
+       background-color: blanchedalmond;
+       font-style: italic;
+       text-align: center;
+   }
+
+body {
+background-color:thistle
+}
+   #section1
+   {
+       text-align: center;
+       color: black;
+       background-color: maroon;
+       font-style: initial;
+        border:black;
+        border-style: dashed;
+        margin-top: 10px;
+   }
+
+
+#section2
+{
+    background-color: peachpuff;
+    color: brown;
+    margin-top: 10px;
+    border: gold;
+    border-style: dashed;
+    
+}
