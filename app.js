@@ -5,7 +5,7 @@
     console.log(userName);
  }
 
-
+ let guessCount = 0;
 
 let favoriteAnimal = prompt('Are dogs my favorite animal?');
 
@@ -16,6 +16,7 @@ console.log(fooanimal);
 if (fooanimal === 'yes' || fooanimal === 'y') {
     console.log("True");
     alert('That answer is correct!');
+    guessCount += 1;
 } else if (fooanimal === 'no' || fooanimal === 'n') {
     alert("That answer is incorrect. Dogs are the best");
     console.log("False"); 
@@ -36,6 +37,7 @@ console.log(foosiblings);
 if (foosiblings === 'no' || foosiblings === 'n') {
     console.log("True");
     alert("That answer is correct!");
+    guessCount += 1;
 } else if (foosiblings === 'yes' || foosiblings === 'y') {
     alert("That answer is incorrect. Do I seem entitled?");
     console.log("False"); 
@@ -54,6 +56,7 @@ console.log(fooheight);
 if (fooheight === 'no' || fooheight === 'n') {
     console.log("True");
     alert("That answer is correct!");
+    guessCount += 1;
 }  else if (fooheight === 'yes' || fooheight === 'y') {
     alert("That answer is incorrect I'm 5 feet 19 inches tall");
     console.log("False"); 
@@ -72,6 +75,7 @@ console.log(fooCodingBackground);
 if (fooCodingBackground === 'no' || fooCodingBackground === 'n') {
     console.log("True");
     alert("That answer is correct!");
+    guessCount += 1;
     console.log(fooCodingBackground);
 } else if (fooCodingBackground === 'yes' || fooCodingBackground === 'y') {
     console.log("False"); 
@@ -94,6 +98,7 @@ console.log(fooSkateBoarding);
 if (fooSkateBoarding === 'no' || fooSkateBoarding === 'n') {
     console.log("True");
     alert("That answer is correct! I am terrible at it.");
+    guessCount += 1;
     console.log(fooSkateBoarding);
 } else if (fooSkateBoarding === 'yes' || fooSkateBoarding === 'y') {
     console.log("False"); 
@@ -103,7 +108,67 @@ if (fooSkateBoarding === 'no' || fooSkateBoarding === 'n') {
 }
 
 
-alert('Thank you ' + userName +' for playing my guessing game. I hope you have a wonderful day!')
+let correctAnswer = 14;
+let wannaPlay = prompt('Do you want to play a guessing game about me? (Yes or No)');
+let playTheGame = wannaPlay.toLowerCase() == 'yes';
+console.log(wannaPlay);
+let wonTheGame = false;
+
+if (playTheGame){
+    let numberOfAttempts = 4;
+    for (let i = 1; i <= numberOfAttempts; i++){
+        let userAnswer = prompt("How old was I when I got my first dog?");
+        console.log(i)
+        if (userAnswer == correctAnswer){ /// then...
+            wonTheGame = true;
+            alert ('You got it right!');
+            guessCount += 1;
+            break;
+        }
+        else {
+            if(userAnswer < correctAnswer){
+                alert(`Your answer is too low. Try Again! You have  ${numberOfAttempts -i}  attempts left`);
+            } else if (userAnswer > correctAnswer){
+                alert(`Your answer is too high. Try Again! You have ${numberOfAttempts -i}  attempts left`);
+            }
+        }
+    } 
+}
+if (wonTheGame){
+    alert(`Thank you ${userName} for playing this guessing game. You won!`);
+}
+else {
+    alert ('I was 14 when I got my first dog. He was a Whippet that I named Diesel');
+    alert(`Thank you ${userName} for playing this guessing game.`);
+}
+
+let multiChoiceGame = prompt('Do you want to play a multi-choice guessing game about me? (Yes or No)');
+let multiGame = multiChoiceGame.toLowerCase() == 'yes';
+console.log(multiChoiceGame);
+
+
+if (multiGame){
+    let answer = prompt('What color is my dog?').toLowerCase();
+    let correctAnswer = ['white', 'black'];
+    let numberOfAttempts = 6 ;
+    for(let i = 1; i <= numberOfAttempts; i++){
+            console.log("correct answer" , correctAnswer)
+            console.log("your answer" , answer)
+             if(correctAnswer[0] == answer || 
+                correctAnswer[1] == answer){
+             alert('You got it right!');
+             guessCount += 1;
+                break;
+            } else { 
+            alert('Incorrect, You have ' + (numberOfAttempts - i) + ' attempts left');
+            }
+            answer = prompt('What color is my dog?').toLowerCase();
+        }
+}
+
+alert(`Hey ${userName} You got ${guessCount} out of 7 correct`);
+
+
 
 
 
