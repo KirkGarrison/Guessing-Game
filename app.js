@@ -145,27 +145,34 @@ else {
 let multiChoiceGame = prompt('Do you want to play a multi-choice guessing game about me? (Yes or No)');
 let multiGame = multiChoiceGame.toLowerCase() == 'yes';
 console.log(multiChoiceGame);
+let wonThePet = false;
 
 
 if (multiGame){
-    let answer = prompt('What color is my dog?').toLowerCase();
+    let answer = prompt('What color is one of my dogs?').toLowerCase();
     let correctAnswer = ['white', 'black'];
-    let numberOfAttempts = 6 ;
-    for(let i = 1; i <= numberOfAttempts; i++){
+    let numberOfAttempts = 6;
+    for(let i = 1; i < numberOfAttempts; i++){
             console.log("correct answer" , correctAnswer)
             console.log("your answer" , answer)
-             if(correctAnswer[0] == answer || 
-                correctAnswer[1] == answer){
-             alert('You got it right!');
-             guessCount += 1;
-                break;
-            } else { 
+        if(correctAnswer[0] == answer || 
+            correctAnswer[1] == answer){
+            wonThePet = true;
+            alert('You got it right!');
+            guessCount += 1;
+            break;
+        } else { 
             alert('Incorrect, You have ' + (numberOfAttempts - i) + ' attempts left');
             }
-            answer = prompt('What color is my dog?').toLowerCase();
+            answer = prompt('What color is one of my dogs?').toLowerCase();
         }
 }
-
+if (wonThePet){
+    alert(`Thank you ${userName} you are correct! My dogs are white, and black`)
+}
+else {
+    alert('My dogs colors are black, and white.')
+}
 alert(`Hey ${userName} You got ${guessCount} out of 7 correct`);
 
 
