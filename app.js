@@ -1,5 +1,7 @@
 // use strict //
 
+function main() {
+
  let userName = prompt('Welcome! Please Enter your Name'); {
       alert('Welcome ' + userName + ' I hope you enjoy this "about me" guessing game I created!');
     console.log(userName);
@@ -174,6 +176,9 @@ else {
     alert('My dogs colors are black, and white.')
 }
 alert(`Hey ${userName} You got ${guessCount} out of 7 correct`);
+}
+
+main();
 
 
 
