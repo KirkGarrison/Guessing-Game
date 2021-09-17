@@ -173,6 +173,11 @@ function dogColor(){
 }
 dogColor();
 
+// Function main2() {
+//     console.log(I had no partner)
+// }
+// main2();
+
 
 
 
