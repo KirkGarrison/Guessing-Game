@@ -7,7 +7,11 @@ header {
    }
 
 body {
-background-color:thistle
+background-color:thistle;
+background-size: cover;
+max-width: 1900px;
+max-height: 5000px;
+background-image: url(https://images.unsplash.com/photo-1631932100997-f194aeb50c45?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80);
 }
    #section1
    {
@@ -18,6 +22,8 @@ background-color:thistle
         border:black;
         border-style: dashed;
         margin-top: 10px;
+        max-width: 700px;
+        
    }
 
 
@@ -28,9 +34,15 @@ background-color:thistle
     margin-top: 10px;
     border: gold;
     border-style: dashed;
+    max-width: 700px;
     
 }
 
-b {
-
+#section3 {
+border: black;
+border-style: dashed;
+max-width: 300px;
+background-color: cadetblue;
+margin-top: 10px;
 }
+
